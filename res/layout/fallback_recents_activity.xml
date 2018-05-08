@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.quickstep.fallback.RecentsRootView android:id="@id/drag_layer" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.quickstep.fallback.FallbackRecentsView android:theme="@style/HomeScreenElementTheme" android:id="@id/overview_panel" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+</com.android.quickstep.fallback.RecentsRootView>

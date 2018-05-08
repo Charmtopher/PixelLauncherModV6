@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.allapps.AllAppsContainerView android:id="@id/apps_view" android:focusable="true" android:focusableInTouchMode="true" android:saveEnabled="false" android:clipChildren="true" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/all_apps_rv_layout" />
+    <include layout="@layout/all_apps_floating_header" />
+    <include android:id="@id/search_container_all_apps" layout="@layout/search_container_all_apps" />
+    <include layout="@layout/all_apps_fast_scroller" />
+</com.android.launcher3.allapps.AllAppsContainerView>

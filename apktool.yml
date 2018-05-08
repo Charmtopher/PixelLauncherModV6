@@ -1,0 +1,29 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: PixelLauncherModV6.apk
+compressionType: false
+doNotCompress:
+- dex
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '21'
+  targetSdkVersion: '27'
+sharedLibrary: false
+unknownFiles:
+  protobuf.meta: '0'
+  build-data.properties: '8'
+  error_prone/Annotations.gwt.xml: '8'
+  jsr305_annotations/Jsr305_annotations.gwt.xml: '8'
+  third_party/java_src/error_prone/project/annotations/Annotations.gwt.xml: '8'
+  third_party/java_src/error_prone/project/annotations/Google_internal.gwt.xml: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.2.4
+versionInfo:
+  versionCode: '504'
+  versionName: Q-4753642
