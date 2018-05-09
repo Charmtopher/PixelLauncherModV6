@@ -92,7 +92,7 @@
 
     const/4 v0, 0x1
 
-    if-eq p0, v0, :cond_1
+    if-eq v0, v0, :cond_1
 
     .line 68
     return v1
