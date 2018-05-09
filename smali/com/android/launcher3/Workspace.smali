@@ -3519,6 +3519,16 @@
 
     const v6, 0x7f0e0013
 
+    invoke-virtual {p0}, Lcom/android/launcher3/Workspace;->getContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/android/launcher3/Utilities;->enableSmartSpace(Landroid/content/Context;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
     const/4 v8, 0x1
 
     invoke-virtual/range {v3 .. v8}, Lcom/android/launcher3/CellLayout;->addViewToCellLayout(Landroid/view/View;IILcom/android/launcher3/CellLayout$LayoutParams;Z)Z

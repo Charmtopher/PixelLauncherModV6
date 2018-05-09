@@ -598,7 +598,11 @@
 
     const/4 v15, 0x1
 
-    const/16 v16, 0x1
+    iget-object v3, v0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Lcom/android/launcher3/Utilities;->enableSmartSpace(Landroid/content/Context;)Z
+
+    move-result v16
 
     move-object v11, v8
 
