@@ -2090,13 +2090,19 @@
     .locals 3
 
     .line 368
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/k;->xH:Landroid/content/SharedPreferences;
+    # iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/k;->xH:Landroid/content/SharedPreferences;
+    #
+    # const-string v1, "pixel_2018_qsb_use_two_bubbles"
+    #
+    # const/4 v2, 0x0
+    #
+    # invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    #
+    # move-result v0
 
-    const-string v1, "pixel_2018_qsb_use_two_bubbles"
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/k;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v0}, Lcom/android/launcher3/Utilities;->twoBubblesQsb(Landroid/content/Context;)Z
 
     move-result v0
 

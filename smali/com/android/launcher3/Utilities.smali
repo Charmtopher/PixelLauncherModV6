@@ -2085,3 +2085,24 @@
 
   goto :resume
 .end method
+
+.method public static twoBubblesQsb(Landroid/content/Context;)Z
+    .locals 3
+
+    .prologue
+    .line 133
+    invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "pref_twoBubblesQsb"
+
+    const v2, 0x0
+
+    .line 133
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
