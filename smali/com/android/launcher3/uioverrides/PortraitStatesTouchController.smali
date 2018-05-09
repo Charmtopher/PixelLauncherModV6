@@ -370,6 +370,8 @@
     .line 141
     move v1, v2
 
+    const v1, 0x3
+
     goto :goto_2
 
     .line 133

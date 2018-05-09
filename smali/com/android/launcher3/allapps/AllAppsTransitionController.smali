@@ -20,7 +20,7 @@
 
 .field private final mLauncher:Lcom/android/launcher3/Launcher;
 
-.field private mProgress:F
+.field public mProgress:F
 
 .field private mScrollRangeDelta:F
 
