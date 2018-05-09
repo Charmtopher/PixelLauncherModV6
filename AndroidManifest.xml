@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="27" android:compileSdkVersionCodename="P" package="com.google.android.apps.nexuslauncher" platformBuildVersionCode="27" platformBuildVersionName="P">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.apps.nexuslauncher" platformBuildVersionCode="27" platformBuildVersionName="P">
     <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
     <uses-feature android:name="com.google.android.feature.PIXEL_EXPERIENCE" android:required="true"/>
     <permission android:description="@string/permdesc_read_settings" android:label="@string/permlab_read_settings" android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" android:permissionGroup="android.permission-group.SYSTEM_TOOLS" android:protectionLevel="signatureOrSystem"/>
