@@ -17,7 +17,7 @@ script:
 before_deploy:
 - git config --local user.name "paphonb"
 - git config --local user.email "paphonb@gmail.com"
-# - git tag "6_${TRAVIS_BUILD_NUMBER}" --force
+- git tag "6_${TRAVIS_BUILD_NUMBER}" --force
 deploy:
 - provider: script
   skip_cleanup: true
@@ -27,7 +27,7 @@ deploy:
 - provider: releases
   skip_cleanup: true
   api_key:
-    secure: QdX29QFn8lb6NBaxVH8nybeYikK+8GO1I7MVcgeBIWKwtcx/4/IoPAP7D83GfkSk6+VQJ6K35Pjn/E6xZb/O18aTtGZCB9bTpY18AJmeLmeawWEdHJr4/IISD09WO1YX90Te1/HirqMpZFI0HkRMtR6oZDxUST8bW+hU0dKGcWdXPMuc1VSEzBjsaFbit0JTQlOSH3AS9bavNdqbMpIZGEK2EjI1pzfLldV7s8CM0lYPamy+TknCO04kITLwQK8AfnpbmikEgjyhYFzxmd/az63YfTudLRbiK6rJyE0oif+6Qoe/JfiYcXmecx/krR7D1mkPIrvOCrjKTOMKPX9Psr3k4AscbZ/h07tLhI+BmiHVwy13zQywhJ9i0bh+OsteTK8aOXx0uL/tMAR6w8EIZhSyvc6zzu7dWGsq4gTP8A3gwMfvwrUh4sWDwYo7mzmNiKQTOuSHxj2NHhVT0o89fSu/WYi1lXGdStrGXNNQccUJT7ttGVqBaFsr65W/tlhhn/AwAP1KzPv0Pm+/Y1qeMopv/o+QTR1aoHXk+lFuf4u2uYyvMgKiTCfJKb5QCyJ3joALKFQkXb/llILe1BwrMwGcznEOL1MszfK6cEJBjYD8J3iSvm2GWHC9SAbzG3UPOgCCfcTWtmpQMeE56JYv/Yww3Mc7+ZScGiCC1bxLMzc=
+    secure: gnnO0CuxxbLh8GWV8vvcBiDBw0IBWtgv/xR8fxYt0oEpADY8hGEvDBQL8nDHspSgT1Wy2AJ1OaxLK7wKtM4TIf5BKzcGjEY9K7cmzxVAClaYFzHDP9b2BF7sujlFqnE0dPRZT2G/fJFcxrD6hTxdBiN9KOphlvL+eSmJDOD/aHGg4N5CpQpZWvMvxboVA6/oXwJLknOcMu3oqzMZvs5JOLEXu+onMMB+Ar4JftkzcFtM98ymC604MjJIorh/3eTyqgnQUksddhy8V0Jw3HF1vDUJmVBnXirmPHtZspptUXWGJBfNf/OZ9YZw4qa1LPT/GfVfWrQeGL8qpwDFYMoCnGirmGJnY7QbrZx/lJ+5AXaNoOTy0OJk8hbineYvaGVSKFnvdItkmfk4iFwEMYTtKW8ng1sKkcINP+Cre2YdXjpxFYPqkT9IKfFxvsWRMH0fKuFgT8UM3a7qLw4siQ2QMmzO6uo36mtvJj3RBO15qQwcM2XQ+4oSmsdlCthEumKy2WY3yacxgI9ZkSesbtbsS7npJSSaa8P60ag4gMwhzb4zJhsMFOQgUCZTtoBZoFeI7v1/2Au1D86O4i2jMfISDT3eH8mWggPwLE7HLccezDukW+Qn+lJz/4b1iBQWSSus97rzd5fH1VB1o7FR84seROf68CSLysUfzlwvCn/8R7o=
   file:
   - "$APK_NAME"
   - "$PIXEL_APK_NAME"
