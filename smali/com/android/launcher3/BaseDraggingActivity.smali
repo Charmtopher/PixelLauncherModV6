@@ -271,10 +271,42 @@
 .end method
 
 .method protected getThemeRes(Lcom/android/launcher3/dynamicui/WallpaperColorInfo;)I
-    .locals 1
+    .locals 4
+
+    invoke-static {p0}, Lcom/android/launcher3/Utilities;->getTheme(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "1"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :lightTheme
+
+    const-string/jumbo v3, "2"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :darkTheme
+
+    const-string/jumbo v3, "3"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :darkTextTheme
 
     .line 87
     iget-boolean v0, p1, Lcom/android/launcher3/dynamicui/WallpaperColorInfo;->mIsDark:Z
+
+    iget-boolean v1, p1, Lcom/android/launcher3/dynamicui/WallpaperColorInfo;->mSupportsDarkText:Z
+
+    :resume
 
     if-eqz v0, :cond_0
 
@@ -285,9 +317,7 @@
 
     .line 89
     :cond_0
-    iget-boolean p1, p1, Lcom/android/launcher3/dynamicui/WallpaperColorInfo;->mSupportsDarkText:Z
-
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
     .line 90
     const p1, 0x7f130003
@@ -299,6 +329,30 @@
     const p1, 0x7f130002
 
     return p1
+
+    :lightTheme
+
+    const v0, 0x0
+
+    const v1, 0x0
+
+    goto :resume
+
+    :darkTheme
+
+    const v0, 0x1
+
+    const v1, 0x0
+
+    goto :resume
+
+    :darkTextTheme
+
+    const v0, 0x0
+
+    const v1, 0x1
+
+    goto :resume
 .end method
 
 .method public getViewBounds(Landroid/view/View;)Landroid/graphics/Rect;

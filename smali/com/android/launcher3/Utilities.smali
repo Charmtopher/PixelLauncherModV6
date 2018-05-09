@@ -2052,3 +2052,36 @@
     .line 471
     return-object v0
 .end method
+
+.method public static getTheme(Landroid/content/Context;)Ljava/lang/String;
+  .locals 4
+
+  .prologue
+  .line 133
+  invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+  move-result-object v0
+
+  const-string/jumbo v1, "pref_theme"
+
+  sget-boolean v3, Lcom/android/launcher3/Utilities;->ATLEAST_OREO_MR1:Z
+
+  if-eqz v3, :before_o_mr1
+
+  const-string/jumbo v2, "0"
+
+  :resume
+
+  .line 133
+  invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+  move-result-object v0
+
+  return-object v0
+
+  :before_o_mr1
+
+  const-string/jumbo v2, "1"
+
+  goto :resume
+.end method

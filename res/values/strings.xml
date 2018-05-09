@@ -203,4 +203,5 @@
     <string name="hint_qsb">Search apps &amp; more</string>
     <string name="hotseat_hint_qsb">Search apps, web, &amp; more…</string>
     <string name="hotseat_qsb_preferences">Preferences</string>
+    <string name="default_theme">1</string>
 </resources>

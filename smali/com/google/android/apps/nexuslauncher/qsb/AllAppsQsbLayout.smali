@@ -449,6 +449,8 @@
 
     move-result p1
 
+    const p1, 0x18
+
     .line 288
     invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/qsb/AllAppsQsbLayout;->getResources()Landroid/content/res/Resources;
 

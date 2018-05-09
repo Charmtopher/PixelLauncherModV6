@@ -61,6 +61,8 @@
 
 .field public mPopupDataProvider:Lcom/android/launcher3/popup/PopupDataProvider;
 
+.field private mPrefChangeHandler:Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
 .field private final mReceiver:Landroid/content/BroadcastReceiver;
 
 .field public mRotationHelper:Lcom/android/launcher3/states/RotationHelper;
@@ -4458,6 +4460,18 @@
 
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
 
+    new-instance v1, Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
+    invoke-direct {v1, p0}, Lcom/android/launcher3/Launcher$PrefChangeHandler;-><init>(Lcom/android/launcher3/Launcher;)V
+
+    iput-object v1, p0, Lcom/android/launcher3/Launcher;->mPrefChangeHandler:Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
+    iget-object v1, p0, Lcom/android/launcher3/Launcher;->mSharedPrefs:Landroid/content/SharedPreferences;
+
+    iget-object v2, p0, Lcom/android/launcher3/Launcher;->mPrefChangeHandler:Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
+    invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
+
     .line 277
     iget-object v0, v0, Lcom/android/launcher3/LauncherAppState;->mIconCache:Lcom/android/launcher3/IconCache;
 
@@ -5010,6 +5024,21 @@
     iget-object v1, p0, Lcom/android/launcher3/Launcher;->mSharedPrefsListener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
+
+    iget-object v0, p0, Lcom/android/launcher3/Launcher;->mPrefChangeHandler:Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
+    if-eqz v0, :listener_is_null
+
+    .line 1363
+    iget-object v0, p0, Lcom/android/launcher3/Launcher;->mSharedPrefs:Landroid/content/SharedPreferences;
+
+    iget-object v1, p0, Lcom/android/launcher3/Launcher;->mPrefChangeHandler:Lcom/android/launcher3/Launcher$PrefChangeHandler;
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
+
+    .line 1367
+
+    :listener_is_null
 
     .line 1343
     :try_start_0
