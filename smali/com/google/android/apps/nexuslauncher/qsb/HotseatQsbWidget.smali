@@ -507,6 +507,12 @@
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/android/launcher3/Utilities;->forceColoredQsb(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :force_colored_qsb
+
     invoke-static {v0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
 
     move-result-object v0
@@ -551,6 +557,12 @@
     const/4 v0, 0x0
 
     .line 203
+    return v0
+
+    :force_colored_qsb
+
+    const/4 v0, 0x1
+
     return v0
 .end method
 

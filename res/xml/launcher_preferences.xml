@@ -19,6 +19,7 @@
     <PreferenceScreen android:persistent="false" android:title="Customizations" android:key="customizations_screen">
         <ListPreference android:key="pref_theme" android:title="Launcher theme" android:summary="%s" android:defaultValue="@string/default_theme"
           android:entries="@array/theme_entries" android:entryValues="@array/theme_values" />
+        <SwitchPreference android:title="Force colored Google logo on search bar" android:key="pref_forceColoredQsb" android:summary="Use colored Google logo on search bar regardless of wallpaper" android:defaultValue="false" />
         <SwitchPreference android:title="New search bar style" android:key="pref_twoBubblesQsb" android:summary="Use the new two bubbles search bar ui" android:defaultValue="false" />
     </PreferenceScreen>
     <PreferenceScreen android:persistent="false" android:title="@string/about" android:key="about_screen">
