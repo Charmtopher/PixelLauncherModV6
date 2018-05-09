@@ -7,7 +7,7 @@ env:
 language: java
 before_install:
 - openssl aes-256-cbc -K $encrypted_1feb348f29d3_key -iv $encrypted_1feb348f29d3_iv
--in mpl.jks.enc -out mpl.jks -d
+  -in mpl.jks.enc -out mpl.jks -d
 before_script:
 - export APK_NAME="Pixel 2 Launcher modded 6 build ${TRAVIS_BUILD_NUMBER}.apk"
 - export PIXEL_APK_NAME="Pixel 2 Launcher modded 6 build ${TRAVIS_BUILD_NUMBER} for
@@ -17,6 +17,7 @@ script:
 before_deploy:
 - git config --local user.name "paphonb"
 - git config --local user.email "paphonb@gmail.com"
+# - git tag "6_${TRAVIS_BUILD_NUMBER}" --force
 deploy:
 - provider: script
   skip_cleanup: true
