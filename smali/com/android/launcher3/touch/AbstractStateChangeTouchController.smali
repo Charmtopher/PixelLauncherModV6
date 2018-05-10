@@ -34,10 +34,12 @@
 
 .field public mToState:Lcom/android/launcher3/LauncherState;
 
+.field public final mHandler:Landroid/os/Handler;
+
 
 # direct methods
 .method public constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/touch/SwipeDetector$Direction;)V
-    .locals 1
+    .locals 2
 
     .line 64
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -51,6 +53,16 @@
     invoke-direct {v0, p1, p0, p2}, Lcom/android/launcher3/touch/SwipeDetector;-><init>(Landroid/content/Context;Lcom/android/launcher3/touch/SwipeDetector$Listener;Lcom/android/launcher3/touch/SwipeDetector$Direction;)V
 
     iput-object v0, p0, Lcom/android/launcher3/touch/AbstractStateChangeTouchController;->mDetector:Lcom/android/launcher3/touch/SwipeDetector;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/android/launcher3/touch/AbstractStateChangeTouchController;->mHandler:Landroid/os/Handler;
 
     .line 67
     return-void
@@ -160,7 +172,7 @@
 .method public abstract canInterceptTouch(Landroid/view/MotionEvent;)Z
 .end method
 
-.method protected final clearState()V
+.method public final clearState()V
     .locals 2
 
     .line 276
@@ -907,8 +919,19 @@
     .line 239
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    :goto_return
     .line 240
+    return-void
+
+    :goto_return
+
+    new-instance v0, Lcom/android/launcher3/touch/-$$Lambda$AbstractStateChangeTouchController$2;
+
+    invoke-direct {v0, p0}, Lcom/android/launcher3/touch/-$$Lambda$AbstractStateChangeTouchController$2;-><init>(Lcom/android/launcher3/touch/AbstractStateChangeTouchController;)V
+
+    iget-object v1, p0, Lcom/android/launcher3/touch/AbstractStateChangeTouchController;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
     return-void
 .end method
 
