@@ -11,6 +11,7 @@ sed -i -e '0,/com.google.android.apps.nexuslauncher/s//com.google.android.apps.m
 sed -i -e 's/com.google.android.apps.nexuslauncher.permission./com.google.android.apps.moddednexuslauncher.permission./g' AndroidManifest.xml
 sed -i -e 's/com.google.android.apps.nexuslauncher.settings/com.google.android.apps.moddednexuslauncher.settings/g' AndroidManifest.xml
 sed -i -e 's/com.google.android.apps.nexuslauncher.appssearch/com.google.android.apps.moddednexuslauncher.appssearch/g' AndroidManifest.xml
+sed -i -e 's/android:authorities="com.google.android.apps.nexuslauncher"/android:authorities="com.google.android.apps.moddednexuslauncher"/g' AndroidManifest.xml
 sed -i -e 's/com.google.android.apps.nexuslauncher.appssearch/com.google.android.apps.moddednexuslauncher.appssearch/g' smali/com/google/android/apps/nexuslauncher/search/AppSearchProvider.smali
 sed -i -e 's/com.google.android.apps.nexuslauncher.appssearch/com.google.android.apps.moddednexuslauncher.appssearch/g' smali/com/google/android/apps/nexuslauncher/search/e.smali
 sed -i -e 's/com.google.android.apps.nexuslauncher/com.google.android.apps.moddednexuslauncher/g' smali/com/android/launcher3/config/FeatureFlags.smali
