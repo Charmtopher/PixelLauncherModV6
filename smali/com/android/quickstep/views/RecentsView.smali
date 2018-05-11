@@ -1282,6 +1282,12 @@
 .method private updateTaskStackListenerState()V
     .locals 3
 
+    invoke-direct {p0}, Lcom/android/quickstep/views/RecentsView;->isRecentsEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
     .line 383
     iget-boolean v0, p0, Lcom/android/quickstep/views/RecentsView;->mOverviewStateEnabled:Z
 
@@ -4092,4 +4098,13 @@
     const/4 p1, 0x1
 
     return p1
+.end method
+
+.method private isRecentsEnabled()Z
+    .locals 1
+
+    .line 934
+    sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_P:Z
+
+    return v0
 .end method
