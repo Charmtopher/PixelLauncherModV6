@@ -1282,7 +1282,7 @@
 .method private updateTaskStackListenerState()V
     .locals 3
 
-    invoke-direct {p0}, Lcom/android/quickstep/views/RecentsView;->isRecentsEnabled()Z
+    invoke-static {}, Lcom/android/quickstep/views/RecentsView;->isRecentsEnabled()Z
 
     move-result v0
 
@@ -4100,7 +4100,7 @@
     return p1
 .end method
 
-.method private isRecentsEnabled()Z
+.method public static isRecentsEnabled()Z
     .locals 1
 
     .line 934

@@ -626,6 +626,12 @@
 .method public registerTaskStackListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
     .locals 3
 
+    invoke-static {}, Lcom/android/quickstep/views/RecentsView;->isRecentsEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :goto_return
+
     .line 355
     iget-object v0, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->mTaskStackChangeListeners:Lcom/android/systemui/shared/system/TaskStackChangeListeners;
 
@@ -644,6 +650,7 @@
     .line 357
     monitor-exit v0
 
+    :goto_return
     return-void
 
     :catchall_0
@@ -946,6 +953,12 @@
 .method public unregisterTaskStackListener(Lcom/android/systemui/shared/system/TaskStackChangeListener;)V
     .locals 2
 
+    invoke-static {}, Lcom/android/quickstep/views/RecentsView;->isRecentsEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :goto_return
+
     .line 365
     iget-object v0, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->mTaskStackChangeListeners:Lcom/android/systemui/shared/system/TaskStackChangeListeners;
 
@@ -960,6 +973,7 @@
     .line 367
     monitor-exit v0
 
+    :goto_return
     return-void
 
     :catchall_0
