@@ -23,6 +23,8 @@
 
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_P:Z
 
+    const v0, 0x0
+
     if-eqz v0, :skip_init
 
     .line 32
