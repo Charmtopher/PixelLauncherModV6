@@ -32,6 +32,8 @@
 
 .field private final mUiHandler:Landroid/os/Handler;
 
+.field private mContext:Landroid/content/Context;
+
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
@@ -39,6 +41,8 @@
 
     .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/quickstep/OverviewInteractionState;->mContext:Landroid/content/Context;
 
     .line 85
     const/4 v0, 0x1
