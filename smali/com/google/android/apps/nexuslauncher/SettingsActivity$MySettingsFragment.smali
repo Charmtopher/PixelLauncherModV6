@@ -116,6 +116,14 @@
 
     invoke-virtual {v0, p1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
+    const-string/jumbo v0, "pref_hide_apps"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/nexuslauncher/SettingsActivity$MySettingsFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
     .line 100
     nop
 
@@ -309,39 +317,69 @@
 .end method
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
-    .locals 1
+    .locals 3
 
     .line 149
     const-string v0, "pref_smartspace"
 
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_0
+    if-eqz v1, :cond_0
 
     .line 150
     invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/SettingsActivity$MySettingsFragment;->getContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-static {p1}, Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;->p(Landroid/content/Context;)Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;
+    invoke-static {v1}, Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;->p(Landroid/content/Context;)Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-virtual {p1}, Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;->eP()V
+    invoke-virtual {v1}, Lcom/google/android/apps/nexuslauncher/smartspace/SmartspaceController;->eP()V
 
     .line 151
-    const/4 p1, 0x1
+    const/4 v1, 0x1
 
-    return p1
+    return v1
 
     .line 153
     :cond_0
+
+    const-string/jumbo v0, "pref_hide_apps"
+
+    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/SettingsActivity$MySettingsFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v2, Lcom/moddedpixellauncher/HiddenAppsActivity;
+
+    invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :cond_1
     const/4 p1, 0x0
 
     return p1

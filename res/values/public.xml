@@ -256,6 +256,7 @@
     <public type="layout" name="work_tab_bottom_user_education_view" id="0x7f040043" />
     <public type="layout" name="work_tab_footer" id="0x7f040044" />
     <public type="layout" name="workspace_screen" id="0x7f040045" />
+    <public type="layout" name="hide_item" id="0x7f040046" />
     <public type="anim" name="no_anim" id="0x7f050000" />
     <public type="anim" name="task_open_enter" id="0x7f050001" />
     <public type="animator" name="all_apps_fastscroll_icon_anim" id="0x7f060000" />
@@ -898,6 +899,8 @@
     <public type="id" name="work_footer_divider" id="0x7f0e0090" />
     <public type="id" name="work_mode_toggle" id="0x7f0e0091" />
     <public type="id" name="managed_by_label" id="0x7f0e0092" />
+    <public type="id" name="action_apply" id="0x7f0e0093" />
+    <public type="id" name="action_reset" id="0x7f0e0094" />
     <public type="bool" name="notification_badging_enabled" id="0x7f0f0000" />
     <public type="bool" name="enable_install_shortcut_api" id="0x7f0f0001" />
     <public type="bool" name="config_largeHeap" id="0x7f0f0002" />

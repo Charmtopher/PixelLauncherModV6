@@ -63,7 +63,7 @@
 
 
 # virtual methods
-.method public final shouldShowApp(Landroid/content/ComponentName;)Z
+.method public shouldShowApp(Landroid/content/ComponentName;)Z
     .locals 1
 
     .line 38

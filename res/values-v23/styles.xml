@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LauncherSettings" parent="@android:style/Theme.Material.Light">
+        <item name="android:colorPrimary">#fff5f5f5</item>
+        <item name="android:colorPrimaryDark">#ffe0e0e0</item>
+        <item name="android:colorAccent">#ff4286f5</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorSecondary">#ffeeeeee</item>
+    </style>
+</resources>

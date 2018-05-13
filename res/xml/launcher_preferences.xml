@@ -22,6 +22,7 @@
         <SwitchPreference android:title="Disable 'At A Glance'" android:key="pref_disableSmartSpace" android:defaultValue="false" />
         <SwitchPreference android:title="Force colored Google logo on search bar" android:key="pref_forceColoredQsb" android:summary="Use colored Google logo on search bar regardless of wallpaper" android:defaultValue="false" />
         <SwitchPreference android:title="New search bar style" android:key="pref_twoBubblesQsb" android:summary="Use the new two bubbles search bar ui" android:defaultValue="false" />
+        <Preference android:key="pref_hide_apps" android:title="Hide apps" />
     </PreferenceScreen>
     <PreferenceScreen android:persistent="false" android:title="@string/about" android:key="about_screen">
         <Preference android:persistent="false" android:title="@string/about_app_version" android:key="about_app_version" />
