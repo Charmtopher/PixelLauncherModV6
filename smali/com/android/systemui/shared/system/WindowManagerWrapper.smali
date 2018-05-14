@@ -273,7 +273,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Landroid/view/IWindowManager;->setShelfHeight(ZI)V
+    # invoke-interface {v0, p1, p2}, Landroid/view/IWindowManager;->setShelfHeight(ZI)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
